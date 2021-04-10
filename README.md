@@ -7,7 +7,7 @@ Un’applicazione web consente la gestione di aste online. Gli utenti accedono t
 **Application Design**
 ![Alt text](/Miscellanee/model.png?raw=true "Model")
 **Database Design**
-![Alt text](/Miscellanee/Untitled_Diagram.png?raw=true "Model")
+![Alt text](Miscellanee/Untitled Diagram.png?raw=true "Model")
 
 ## **2.Versione con JavaScript**
 Si realizzi un’applicazione client server web che estende e/o modifica le specifiche precedenti come segue:
