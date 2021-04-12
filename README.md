@@ -30,6 +30,6 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 
 **+** Devo poter chiudere un asta solo se è nello stato chiuso
 
-**+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione 
+**+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione altrimenti redirect al login
 
 **+** le query hanno come return null opppure il risultato
