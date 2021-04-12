@@ -12,7 +12,9 @@ Un’applicazione web consente la gestione di aste online. Gli utenti accedono t
 ## **2.Versione con JavaScript**
 Si realizzi un’applicazione client server web che estende e/o modifica le specifiche precedenti come segue:
 ● Dopo il login, l’intera applicazione è realizzata con un’unica pagina.
+
 ● Se l’utente accede per la prima volta l’applicazione mostra il contenuto della pagina ACQUISTO. Se l’utente ha già usato l’applicazione, questa mostra il contenuto della pagina VENDO se l’ultima azione dell’utente è stata la creazione di un’asta; altrimenti mostra il contenuto della pagina ACQUISTO con l’elenco (eventualmente vuoto) delle aste su cui l’utente ha cliccato in precedenza e che sono ancora aperte. L’informazione dell’ultima azione compiuta e delle aste visitate è memorizzata a lato client per la durata di un mese.
+
 ● Ogni interazione dell’utente è gestita senza ricaricare completamente la pagina, ma produce l’invocazione asincrona del server e l’eventuale modifica solo del contenuto da aggiornare a seguito dell’evento.
 
 
@@ -20,9 +22,12 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 
 ## **Dubbi risolti**
 **1.** Si ipotizza che l'utente chiuda l'asta nel momento della scadenza, quindi non bisogna controllare tramite un timer la giusta chiusura
+
 **2.** Non è necessaria la registrazione degli utenti, basta inserirli nel database
 
 ## **Note**
 **+** Ogni utente deve vedere le proprie offerte fatte e deve poter chiudere solo le sue aste aperte,tramite la sessione
+
 **+** Devo poter chiudere un asta solo se è nello stato chiuso
+
 **+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione 
