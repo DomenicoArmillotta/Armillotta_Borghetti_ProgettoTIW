@@ -21,3 +21,8 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 ## **Dubbi risolti**
 **1.** Si ipotizza che l'utente chiuda l'asta nel momento della scadenza, quindi non bisogna controllare tramite un timer la giusta chiusura
 **2.** Non è necessaria la registrazione degli utenti, basta inserirli nel database
+
+## **Note**
+**+** Ogni utente deve vedere le proprie offerte fatte e deve poter chiudere solo le sue aste aperte,tramite la sessione
+**+** Devo poter chiudere un asta solo se è nello stato chiuso
+**+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione 
