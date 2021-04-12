@@ -33,3 +33,13 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 **+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione altrimenti redirect al login
 
 **+** le query hanno come return null opppure il risultato
+
+**+** le query danno direttamente i dati ordinati delle query
+
+**+** le pagine vanno messe nel web-inf cosi non sono visibili all utente
+
+**+** quando creo o modifico con query nelle dao devo fare pstatement.executeUpdate()
+
+**+** quando creo o modifico con query per riaggiornare la pagina posso fare la redirect alla servlet che si occupa di andare in quella pagina come GoToHome
+
+**+** quando ho degli update/insert che vanno insieme devo disabilitare l'autocommitt
