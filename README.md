@@ -43,3 +43,7 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 **+** quando creo o modifico con query per riaggiornare la pagina posso fare la redirect alla servlet che si occupa di andare in quella pagina come GoToHome
 
 **+** quando ho degli update/insert che vanno insieme devo disabilitare l'autocommitt
+
+**+** quando ho i "dettagli" da cliccare con i link diversi con lìid, si fa una redirect al link 
+
+**+** per fare "Logout" invalidiamo la sessione e lo rimandiamo all'index
