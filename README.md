@@ -47,3 +47,9 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 **+** quando ho i "dettagli" da cliccare con i link diversi con lìid, si fa una redirect al link 
 
 **+** per fare "Logout" invalidiamo la sessione e lo rimandiamo all'index
+
+**+** usare filtri per fare i controlli prima di chiamare le servlet e mettere i filtri nell xml
+
+**+** ogni pagina viene gestita dalla servlet non posso aggiornare due liste con due servlet separate nella stessa pagina 
+
+**+** in sessione non si mettono gli id dei singoli casi, mentre l id dell utente lo abbiamo nella sessione e non va messo come hidden 
