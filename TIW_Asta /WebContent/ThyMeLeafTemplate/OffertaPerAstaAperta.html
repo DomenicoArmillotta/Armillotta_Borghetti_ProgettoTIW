@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+		<table>
+		<tr th:each="offerta : ${offerte}">
+			<td th:text ="${offerta.id_asta}">id asta:</td>
+			<td th:text ="${offerta.offerente}"></td>
+			<td th:text ="${#dates.format(offerta.data_offerta,'dd-MM-yyyy HH:mm:ss')}"></td>
+			<td th:text ="${offerta.importo}"></td>
+	</tr>
+	</table>
+	</div>
+	
+	<div>
+		<p> inserisci la tua offerte bel maschione!
+		</p>
+		<form th:action="@{/GoToAstaApertaForOfferta}" method="POST">
+		<input type="text" id ="offerta" name = "offerta">
+		<input type="submit">
+	</form>
+	</div>
+	
+	<div>
+		<a th:href ="@{/GetHomepage}">fai un altra offerta!</a>
+	</div>
+</body>
+</html>

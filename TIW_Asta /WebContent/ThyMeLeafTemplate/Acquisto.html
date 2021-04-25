@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+
+<meta charset="UTF-8">
+<title>	acquisto</title>
+</head>
+<body>
+
+<p>
+	<p th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+	
+
+<p> inserisci la keyword per trovare le aste</p>
+	<form th:action="@{/GoAcquisto}" method="POST">
+		<input type="text" id ="keyword" name = "keyword">
+		<input type="submit">
+	</form>
+	<p style="color:#e60000" th:text=" ${NoAsteMsg}"></p>
+		<table>
+		<tr th:each="asta : ${aste}">
+			<td><a th:href="@{/GoToAstaApertaForOfferta(asta_id=${asta.asta_id})}">Details</a></td>
+			<td th:text ="${asta.asta_id}"></td>
+			<td th:text ="${asta.prezzo_iniziale}"></td>
+			<td th:text ="${#dates.format(asta.scadenza,'dd-MM-yyyy HH:mm:ss')}"></td>
+			<td th	:text ="${asta.titolo}"></td>
+			<td th:text ="${asta.descrizione}"></td>
+	</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>HOMEPAGE</title>
+</head>
+<body>
+	<p th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+	<p th:text="${'current time ' +currdata}"></p>
+
+<a th:href="@{/GoAcquisto}">acquisto</a>
+
+<a th:href="@{/GoToVendita}">vendita</a>
+</body>
+</html>
