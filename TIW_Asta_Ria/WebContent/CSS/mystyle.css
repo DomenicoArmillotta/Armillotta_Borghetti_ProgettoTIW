@@ -1,0 +1,120 @@
+.boxed {
+	border: 1px solid black;
+}
+
+th.sortable {
+	cursor: pointer;
+}
+
+.alertmessage{
+	color: red;
+}
+
+.tableList{
+  border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.tableList thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tableList th,
+.tableList td {
+    padding: 12px 15px;
+}
+
+.tableList tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tableList tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tableList tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.tableDetails{
+  border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.tableDetails thead tr {
+    background-color: #F6B700;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tableDetails th,
+.tableDetails td {
+    padding: 12px 15px;
+}
+
+.tableDetails tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tableDetails tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tableDetails tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+h1 { color: #111; font-family: 'Trocchi', sans-serif; font-size: 50px;  letter-spacing: -1px; line-height: 1; }
+h3 { color: #111; font-family: 'Trocchi', sans-serif; font-size: 25px;  letter-spacing: -1px; line-height: 1; }
+
+.tableOfferts{
+  border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.input-container{
+	background-color: #f3f3f3;
+	border-color: #009879;
+	border-style: solid;
+    margin: 25px 0;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.input-label{
+	font-family: "Times New Roman", Times, serif;
+	color : #009879;
+	font-weight: bold;
+	 font-size: 18px;
+}
+
+.submit{
+	background:#009879;
+  width:175px;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
+  border-radius:4px;
+  border: #27ae60 1px solid;
+  
+}
+

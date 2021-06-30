@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="CSS/mystyle.css" />
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="asta.js" charset="utf-8" defer></script>
+<script src="cookie.js" charset="utf-8" defer></script>
+</head>
+<body>
+	<div align="right">
+		<a href="Logout">Logout</a> <a href="#" id="id_gotoAcquisto">Acquisto</a>
+		<a href="#" id="id_gotoVendita">Vendita</a>
+	</div>
+	<h3>
+		Benvenuto <span id="id_username"></span>
+	</h3>
+
+	<div id="id_alert" class="alertmessage"></div>
+
+
+	<table id="id_vendo">
+
+		<tr>
+			<td>
+				<h1>Lista di tutte le aste Aperte</h1>
+				<table class="tableList" id="id_listcontainerAstaAperta">
+					<thead>
+						<tr>
+							<th>nome</th>
+							<th>titolo</th>
+							<th>descrizione</th>
+							<th>Max Offerta</th>
+							<th>Link</th>
+							<th>Chiudi</th>
+
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyAstaAperta">
+					</tbody>
+				</table>
+			</td>
+
+			<td><table id="id_detailcontainerAstaAperta"
+					class="tableDetails">
+					<thead>
+						<tr>
+							<th>asta id</th>
+							<th>titolo</th>
+							<th>descrizione</th>
+							<th>minimo rialzo</th>
+							<th>Data Apertura</th>
+							<th>Data Chiusura</th>
+							<th>prezzo iniziale</th>
+							<th>offerta massima</th>
+							<th>image</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="id_asta_id"></td>
+							<td id="id_titolo"></td>
+							<td id="id_descrizioneAperta"></td>
+							<td id="id_minimo_rialzo"></td>
+							<td id="data_apertura"></td>
+							<td id="data_chiusura"></td>
+							<td id="id_prezzo_iniziale"></td>
+							<td id="id_offerta_massima"></td>
+							<td><img id="id_image" src="" width="100" height="100" /></td>
+						</tr>
+					</tbody>
+					<tr>
+						<td>
+							<div id="astaDetails_alert" style="color: red;"></div>
+						</td>
+					</tr>
+				</table></td>
+
+
+			<td>
+				<table class="tableDetails" id="id_listcontainerOfferteAstaAperta">
+					<thead>
+						<tr>
+							<th>offerente</th>
+							<th>offerta</th>
+
+
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyOfferteAstaAperta">
+					</tbody>
+				</table>
+			</td>
+
+		</tr>
+
+
+		<tr>
+			<td><h1>Lista di tutte le aste Chiuse</h1>
+				<table class="tableList" id="id_listcontainerAstaChiusa">
+					<thead>
+						<tr>
+							<th>Asta id</th>
+							<th>titolo</th>
+							<th>descrizione</th>
+							<th>immagine</th>
+							<th>Link</th>
+
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyastachiusa">
+					</tbody>
+				</table></td>
+
+			<td><table id="id_detailcontainerAstaChiusa"
+					class="tableDetails">
+					<thead>
+						<tr>
+							<th>descrizione</th>
+							<th>prezzo</th>
+							<th>spedizione</th>
+							<th>data apertura</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="id_descrizioneChiusa"></td>
+							<td id="id_prezzo"></td>
+							<td id="id_spedizione"></td>
+							<td id="id_data_apertura"></td>
+						</tr>
+					</tbody>
+				</table></td>
+		</tr>
+		<tr>
+			<td>
+				<div id="closeAstaError_alert" style="color: red;"></div>
+			</td>
+
+		</tr>
+
+
+
+		<tr>
+			<td colspan="2" align="center">
+				<h1>Compila per aprire un'asta</h1>
+				<form id="id_createastaform" action="#" class="input-container">
+					<fieldset>
+						<p>
+							<label class="input-label">Nome: </label> <input type="text"
+								name="nome" class="text-input" required />
+						</p>
+						<p>
+							<label class="input-label">Descrizione: </label> <input
+								type="text" name="descrizione" class="text-input" required />
+						</p>
+						<p>
+							<label class="input-label">Prezzo iniziale: </label> <input
+								type="text" name="prezzo_iniziale" class="text-input" required />
+						</p>
+						<p>
+							<label class="input-label">Minimo rialzo: </label> <input
+								type="text" name="minimo_rialzo" class="text-input" required />
+						</p>
+						<p>
+							<label class="input-label">Data apertura: </label> <input
+								type="datetime-local" class="text-input" name="data_apertura"
+								placeholder="yyyy-MM-dd hh:mm:ss" required />
+						</p>
+						<p>
+							<label class="input-label">Data scadenza: </label> <input
+								type="datetime-local" class="text-input" name="data_scadenza"
+								placeholder="yyyy-MM-dd hh:mm:ss" required />
+						</p>
+						<p>
+							<input type="file" name="immagine" required />
+						</p>
+						<p>
+							<input type="button" value="submit" name="Submit" class="submit">
+						</p>
+					</fieldset>
+				</form>
+				
+				<div id="createAstaError_alert" style="color: red;"></div>
+
+			</td>
+		</tr>
+	</table>
+
+
+
+	<table id="id_acquisto">
+
+		<tr>
+			<td>
+				<form id="id_search" action="#" class="input-container">
+					<p>
+						<label class="input-label">Digita cosa cercare: </label> <input
+							type="text" id="keyword" name="keyword" class="text-input"
+							required />
+					</p>
+					<p>
+						<input type="button" value="submit" name="Submit" class="submit">
+					</p>
+
+				</form>
+				
+			</td>
+			
+		</tr>
+
+
+		<tr>
+			<td>
+				<table class="tableList" id="id_listcontainerAsteRicercate">
+					<thead>
+						<tr>
+							<th>nome</th>
+							<th>titolo</th>
+							<th>descrizione</th>
+							<th>Max Offerta</th>
+							<th>data inserzione</th>
+							<th>link all'asta</th>
+							<!-- new -->
+
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyAsteRicercate">
+					</tbody>
+				</table>
+			</td>
+
+			<td>
+				<table class="tableList" id="id_listcontainerAstaApertaPrev">
+					<thead>
+						<tr>
+							<th>asta id</th>
+							<th>titolo</th>
+							<th>dettagli asta</th>
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyAstaApertaPrev">
+					</tbody>
+				</table>
+			</td>
+
+
+		</tr>
+	</table>
+
+	<table id="id_dettagli_page">
+		<tr>
+
+			<td>
+				<table class="tableDetails" id="id_listcontainerOfferteRicercate">
+					<thead>
+						<tr>
+							<th>offerente</th>
+							<th>offerta</th>
+							<th>data offerta</th>
+
+						</tr>
+					</thead>
+					<tbody id="id_listcontainerbodyOfferteRicercate">
+					</tbody>
+				</table>
+			</td>
+			<td>
+			<td><table id="id_detailcontainerAstaAperta2"
+					class="tableDetails">
+					<thead>
+						<tr>
+							<th>asta id</th>
+							<th>titolo</th>
+							<th>offertente</th>
+							<th>descrizione</th>
+							<th>minimo rialzo</th>
+							<th>Data Apertura</th>
+							<th>Data Chiusura</th>
+							<th>prezzo iniziale</th>
+							<th>offerta massima</th>
+							<th>image</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="id_asta_id2"></td>
+							<td id="id_titolo2"></td>
+							<td id="offerente2"></td>
+							<td id="id_descrizioneAperta2"></td>
+							<td id="id_minimo_rialzo2"></td>
+							<td id="id_data_apertura2"></td>
+							<td id="id_data_chiusura2"></td>
+							<td id="id_prezzo_iniziale2"></td>
+							<td id="id_offerta_massima2"></td>
+							<td><img id="id_image2" src="" width="100" height="100" /></td>
+
+						</tr>
+					</tbody>
+
+				</table></td>
+
+
+			<td>
+				<form id="id_faiOfferta" action="#" class="input-container">
+					<fieldset>
+						<p>
+							<label class="input-label">Fai offerta: </label> <input
+								type="text" name="offerta" class="text-input" required />
+						</p>
+						<p>
+							<input type="button" value="submit" name="SubmitOffert"
+								class="submit">
+						</p>
+					</fieldset>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="offertaError_alert" style="color: red;"></div>
+
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>
