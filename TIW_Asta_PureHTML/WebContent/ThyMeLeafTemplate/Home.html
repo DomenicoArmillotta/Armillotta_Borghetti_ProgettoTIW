@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="stili.css">
+
+
+<head>
+<meta charset="UTF-8">
+<title>HOMEPAGE</title>
+</head>
+<body>
+	
+	<p th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+	
+	<p class="logout">
+		<a th:href="@{/Logout}" style="text-align: right;">logout</a>
+	</p>
+	
+	<p th:text="${'current server time' +currdata}"></p>
+
+	<a th:href="@{/GoAcquisto}">acquisto</a>
+
+	<a th:href="@{/GoToVendita}">vendita</a>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="stili.css">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<p
+			th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+		<p class="logout">
+			<a th:href="@{/Logout}" style="text-align: right;">logout</a>
+		</p>
+	</div>
+	
+	<div>
+		<table>
+		<tr>
+			<td>id asta</td>
+			<td>offerente</td>
+			<td>data offerta</td>
+			<td>importo</td>
+		</tr>
+			<tr th:each="offerta : ${offerte}">
+				<td th:text="${offerta.id_asta}">id asta:</td>
+				<td th:text="${offerta.offerente}"></td>
+				<td
+					th:text="${#dates.format(offerta.data_offerta,'dd-MM-yyyy HH:mm:ss')}"></td>
+				<td th:text="${offerta.importo}"></td>
+			</tr>
+		</table>
+	</div>
+	<!-- posso passare il parametro così -->
+
+	<div>
+		<p>inserisci la tua offerta!</p>
+		<form th:action="@{/GoToAstaApertaForOfferta}" method="POST">
+			<input type="text" id="offerta" name="offerta"> <input
+				type="hidden" th:value="${astaid}" th:attr="name='asta_id'" /> <input
+				type="submit">
+		</form>
+	</div>
+
+	<div>
+		<a th:href="@{/GetHomepage}">fai un altra offerta!</a>
+	</div>
+</body>
+</html>

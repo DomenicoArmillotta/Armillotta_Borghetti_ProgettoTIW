@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+<link rel="stylesheet" type="text/css" href="stili.css">
+
+<meta charset="UTF-8">
+<title>	acquisto</title>
+</head>
+<body>
+
+<p>
+	<p th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+	<p class="logout">
+		<a th:href="@{/Logout}" style="text-align: right;">logout</a>
+	</p>
+	
+
+	<p> inserisci la keyword per trovare le aste</p>
+	<form th:action="@{/GoAcquisto}" method="POST">
+		<input type="text" id ="keyword" name = "keyword">
+		<input type="submit">
+	</form>
+	<p style="color:rgb(0, 64, 255)" th:text=" ${NoAsteMsg}"></p>
+		<table>
+		<tr th:each="asta : ${aste}">
+			<td><a th:href="@{/GoToAstaApertaForOfferta(asta_id=${asta.asta_id})}">Details</a></td>
+			<td th:text ="${'asta id: '+asta.asta_id}">id asta</td>
+			<td th:text ="${'prezzo iniziale '+asta.prezzo_iniziale}">prezzo iniziale</td>
+			<td th:text ="${'id utente '+asta.id_utente}">prezzo iniziale</td>
+			<td th:text ="${'minimo rialzo '+asta.minimo_rialzo}">prezzo iniziale</td>
+			<td th:text ="${#dates.format(asta.dataApertura,'dd-MM-yyyy HH:mm:ss')}">data scadenza</td>
+			<td th:text ="${#dates.format(asta.scadenza,'dd-MM-yyyy HH:mm:ss')}">data scadenza</td>
+			<td th:text ="${'titolo '+asta.titolo}">titolo</td>
+			<td th:text ="${'descrizione '+asta.descrizione}">descrizione</td>
+			<td>
+			<img th:src="@{'data:image/png;base64,'+${asta.getImg}}" style="width:300px;height:300px;"/>
+			</td>
+	</tr>
+	</table>
+	<p>
+		<a th:href ="@{/GetHomepage}">vai alla home</a>
+	</p>
+</body>
+</html>

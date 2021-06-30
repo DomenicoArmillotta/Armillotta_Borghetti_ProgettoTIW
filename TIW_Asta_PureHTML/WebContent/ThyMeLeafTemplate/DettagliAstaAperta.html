@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="stili.css">
+
+<head>
+<meta charset="UTF-8">
+<title>Dettagli Asta Aperta</title>
+</head>
+<body>
+	<h1>Asta Aperta details</h1>
+	<div>
+		<p
+			th:text="${'Nice to see you again ' + session.utente.id_utente+' '}"></p>
+		<p class="logout">
+			<a th:href="@{/Logout}" style="text-align: right;">logout</a>
+		</p>
+	</div>
+	<div>
+		<p th:text=" ${'titolo ' + astaAperta.titolo}"></p>
+		<p th:text="${'descrizione ' + astaAperta.descrizione}"></p>
+		<p th:text="${'prezzo iniziale ' + astaAperta.prezzo_iniziale}"></p>
+		<p th:text="${'minimo rialzo ' + astaAperta.minimo_rialzo}"></p>
+		<p th:text="${'data apertura ' + astaAperta.dataApertura}"></p>
+		<p th:text="${'venditore ' + astaAperta.id_utente}"></p>
+		<p th:text="${'minimo rialzo ' + astaAperta.minimo_rialzo}"></p>
+		<p>
+			<img th:src="@{'data:image/png;base64,'+${immagine}}" />
+		</p>
+	</div>
+
+
+	<h1>Premi il Bottone per chiudere l'asta corrente !</h1>
+	<form action="#" th:action="@{/ChiudiAstaAperta}" method="POST">
+		<fieldset>
+			<input type="hidden" name="asta_id" th:value="${astaAperta.asta_id}">
+			<input type="submit" name="Chiudi Asta Aperta">
+		</fieldset>
+	</form>
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<h1>Ecco tutte le offerte di questa asta</h1>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id offerente :</th>
+						<th>importo :</th>
+						<th>data offerta</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="offerta : ${listaOfferte}">
+						<td th:text="${offerta.offerente}">a</td>
+						<td th:text="${offerta.importo}">a</td>
+						<td th:text="${offerta.data_offerta}">a</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			<a th:href="@{/GetHomepage}">vai alla homepage</a>
+		</div>
+	</div>
+
+</body>
+</html>
