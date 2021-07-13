@@ -18,38 +18,3 @@ Si realizzi un’applicazione client server web che estende e/o modifica le spec
 ● Ogni interazione dell’utente è gestita senza ricaricare completamente la pagina, ma produce l’invocazione asincrona del server e l’eventuale modifica solo del contenuto da aggiornare a seguito dell’evento.
 
 
-
-
-## **Dubbi risolti**
-**1.** Si ipotizza che l'utente chiuda l'asta nel momento della scadenza, quindi non bisogna controllare tramite un timer la giusta chiusura
-
-**2.** Non è necessaria la registrazione degli utenti, basta inserirli nel database
-
-## **Note**
-**+** Ogni utente deve vedere le proprie offerte fatte e deve poter chiudere solo le sue aste aperte,tramite la sessione
-
-**+** Devo poter chiudere un asta solo se è nello stato chiuso
-
-**+** ad ogni pagina devo controllare se l'utente ha fatto il login tramite la sessione altrimenti redirect al login
-
-**+** le query hanno come return null opppure il risultato
-
-**+** le query danno direttamente i dati ordinati delle query
-
-**+** le pagine vanno messe nel web-inf cosi non sono visibili all utente
-
-**+** quando creo o modifico con query nelle dao devo fare pstatement.executeUpdate()
-
-**+** quando creo o modifico con query per riaggiornare la pagina posso fare la redirect alla servlet che si occupa di andare in quella pagina come GoToHome
-
-**+** quando ho degli update/insert che vanno insieme devo disabilitare l'autocommitt
-
-**+** quando ho i "dettagli" da cliccare con i link diversi con lìid, si fa una redirect al link 
-
-**+** per fare "Logout" invalidiamo la sessione e lo rimandiamo all'index
-
-**+** usare filtri per fare i controlli prima di chiamare le servlet e mettere i filtri nell xml
-
-**+** ogni pagina viene gestita dalla servlet non posso aggiornare due liste con due servlet separate nella stessa pagina 
-
-**+** in sessione non si mettono gli id dei singoli casi, mentre l id dell utente lo abbiamo nella sessione e non va messo come hidden 
